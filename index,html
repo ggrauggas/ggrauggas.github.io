@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Tu Nombre</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Tu Nombre</h1>
+      <ul>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>👋 Hola, soy <span>Tu Nombre</span></h2>
+    <p>Desarrollador Frontend apasionado por crear experiencias web modernas y accesibles.</p>
+    <a href="#proyectos" class="btn">Ver mis proyectos</a>
+  </section>
+
+  <section id="proyectos" class="proyectos">
+    <h2>🚀 Proyectos</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Proyecto 1</h3>
+        <p>Descripción breve del proyecto y tecnologías usadas.</p>
+        <a href="#" target="_blank">Ver demo</a>
+      </div>
+      <div class="card">
+        <h3>Proyecto 2</h3>
+        <p>Descripción breve del proyecto y tecnologías usadas.</p>
+        <a href="#" target="_blank">Ver código</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre-mi" class="sobre-mi">
+    <h2>👨‍💻 Sobre mí</h2>
+    <p>Soy un desarrollador con experiencia en HTML, CSS y JavaScript. Me encanta aprender nuevas tecnologías y crear soluciones que combinan diseño y funcionalidad.</p>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <h2>📬 Contacto</h2>
+    <p>Podés escribirme a: <a href="mailto:tuemail@gmail.com">tuemail@gmail.com</a></p>
+    <div class="redes">
+      <a href="https://github.com/tuusuario" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/tuusuario/" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Tu Nombre. Hecho con ❤️</p>
+  </footer>
+</body>
+</html>
