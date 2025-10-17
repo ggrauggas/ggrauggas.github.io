@@ -247,6 +247,19 @@
             color: var(--gray);
         }
 
+        .user-name {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 600;
+        }
+
+        .user-location {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -618,7 +631,7 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Gerard Grau</div>
+                <div class="logo" id="userName">Gerard Grau</div>
                 <div class="nav-links">
                     <a href="#about">Sobre Mí</a>
                     <a href="#skills">Habilidades</a>
@@ -655,14 +668,14 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Hola, soy Gerard Grau 👋</h3>
-                    <p>Soy un desarrollador full stack con sede en Valencia, España, especializado en el desarrollo de aplicaciones móviles con Flutter y soluciones de inteligencia artificial con Python.</p>
+                    <h3>Hola, soy <span class="user-name">Gerard Grau</span></h3>
+                    <p>Soy un desarrollador full stack con sede en <span class="user-location">Valencia, España</span>, especializado en el desarrollo de aplicaciones móviles con Flutter y soluciones de inteligencia artificial con Python.</p>
                     <p>Me encanta enfrentar nuevos desafíos y crear productos que no solo sean funcionales, sino que también ofrezcan una experiencia de usuario excepcional.</p>
                     <p>Cuando no estoy programando, me gusta explorar nuevas tecnologías, contribuir a proyectos de código abierto y compartir conocimiento con la comunidad de desarrolladores.</p>
                 </div>
                 <div class="skills-grid">
                     <div class="skill-category">
-                        <h4>📱 Desarrollo Móvil</h4>
+                        <h4>Desarrollo Móvil</h4>
                         <div class="skill-items">
                             <span class="skill-item">Flutter</span>
                             <span class="skill-item">Dart</span>
@@ -672,7 +685,7 @@
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h4>🤖 Inteligencia Artificial</h4>
+                        <h4>Inteligencia Artificial</h4>
                         <div class="skill-items">
                             <span class="skill-item">Python</span>
                             <span class="skill-item">TensorFlow</span>
@@ -682,7 +695,7 @@
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h4>🌐 Desarrollo Web</h4>
+                        <h4>Desarrollo Web</h4>
                         <div class="skill-items">
                             <span class="skill-item">JavaScript</span>
                             <span class="skill-item">Node.js</span>
@@ -692,7 +705,7 @@
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h4>🔧 Herramientas</h4>
+                        <h4>Herramientas</h4>
                         <div class="skill-items">
                             <span class="skill-item">Git</span>
                             <span class="skill-item">Docker</span>
@@ -728,7 +741,7 @@
                             <span class="tech-tag">CSS3</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">
+                            <a href="https://github.com/ggrauggas/OPTI-IA" class="project-link">
                                 <i class="fab fa-github"></i>
                                 <span>Código</span>
                             </a>
@@ -755,7 +768,7 @@
                             <span class="tech-tag">Camera API</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">
+                            <a href="https://github.com/ggrauggas/MyCodeService" class="project-link">
                                 <i class="fab fa-github"></i>
                                 <span>Código</span>
                             </a>
@@ -836,7 +849,7 @@
                         </div>
                         <div class="contact-text">
                             <h4>Email</h4>
-                            <p>gerardgrau@example.com</p>
+                            <p id="userEmail">gerardgrau2004@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -845,7 +858,7 @@
                         </div>
                         <div class="contact-text">
                             <h4>Ubicación</h4>
-                            <p>Valencia, España</p>
+                            <p id="userLocation">Valencia, España</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -855,14 +868,11 @@
                         <div class="contact-text">
                             <h4>Redes Sociales</h4>
                             <div class="social-links">
-                                <a href="#" class="social-link">
+                                <a href="https://github.com/ggrauggas" class="social-link" id="githubLink">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="#" class="social-link">
+                                <a href="https://linkedin.com/in/gerard-grau-33ba94338" class="social-link" id="linkedinLink">
                                     <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="#" class="social-link">
-                                    <i class="fab fa-twitter"></i>
                                 </a>
                             </div>
                         </div>
@@ -897,7 +907,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">Gerard Grau</div>
+                <div class="footer-logo" id="footerName">Gerard Grau</div>
                 <p class="footer-text">Desarrollador Full Stack especializado en Flutter e Inteligencia Artificial</p>
                 <div class="footer-links">
                     <a href="#about">Sobre Mí</a>
@@ -905,12 +915,73 @@
                     <a href="#projects">Proyectos</a>
                     <a href="#contact">Contacto</a>
                 </div>
-                <p class="copyright">&copy; 2023 Gerard Grau. Todos los derechos reservados.</p>
+                <p class="copyright">&copy; <span id="copyrightYear">2023</span> <span id="copyrightName">Gerard Grau</span>. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // CONFIGURACIÓN DEL USUARIO - MODIFICA ESTOS VALORES
+        const userConfig = {
+            // Información personal
+            name: "Gerard Grau",
+            email: "gerardgrau2004@gmail.com",
+            location: "Valencia, España",
+            
+            // Enlaces a redes sociales
+            socialLinks: {
+                github: "https://github.com/ggrauggas",
+                linkedin: "https://linkedin.com/in/gerard-grau-33ba94338",
+                twitter: "https://twitter.com/ggrauggas"
+            },
+            
+            // Información profesional
+            title: "Desarrollador Full Stack",
+            specialization: "Especializado en Flutter & IA",
+            description: "Transformando ideas en soluciones digitales innovadoras. Más de 2 años de experiencia creando aplicaciones que marcan la diferencia.",
+            
+            // Estadísticas
+            stats: {
+                experience: "2+",
+                projects: "15+",
+                technologies: "5+",
+                commitment: "100%"
+            },
+            
+            // Año de copyright
+            copyrightYear: "2023"
+        };
+
+        // Inicialización de la configuración
+        function initializeUserData() {
+            // Información personal
+            document.getElementById('userName').textContent = userConfig.name;
+            document.querySelectorAll('.user-name').forEach(el => {
+                el.textContent = userConfig.name;
+            });
+            document.getElementById('userEmail').textContent = userConfig.email;
+            document.getElementById('userLocation').textContent = userConfig.location;
+            document.querySelectorAll('.user-location').forEach(el => {
+                el.textContent = userConfig.location;
+            });
+            
+            // Redes sociales
+            document.getElementById('githubLink').href = userConfig.socialLinks.github;
+            document.getElementById('linkedinLink').href = userConfig.socialLinks.linkedin;
+            document.getElementById('twitterLink').href = userConfig.socialLinks.twitter;
+            
+            // Footer
+            document.getElementById('footerName').textContent = userConfig.name;
+            document.getElementById('copyrightName').textContent = userConfig.name;
+            document.getElementById('copyrightYear').textContent = userConfig.copyrightYear;
+            
+            // Actualizar año de copyright si es necesario
+            const currentYear = new Date().getFullYear();
+            if (currentYear.toString() !== userConfig.copyrightYear) {
+                document.getElementById('copyrightYear').textContent = currentYear;
+            }
+        }
+
         // Mobile menu toggle
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
@@ -937,10 +1008,24 @@
             });
         });
 
-        // Form submission
+        // Form submission - Redirige a Gmail con los datos prellenados
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('¡Gracias por tu mensaje! Te responderé lo antes posible.');
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Crear el enlace de Gmail con los datos del formulario
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${userConfig.email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+                `Hola Gerard,\n\nMi nombre es ${name} (${email}).\n\n${message}\n\nSaludos,\n${name}`
+            )}`;
+            
+            // Abrir Gmail en una nueva pestaña
+            window.open(gmailUrl, '_blank');
+            
+            // Limpiar el formulario
             this.reset();
         });
 
@@ -954,6 +1039,11 @@
                 header.style.background = 'rgba(255, 255, 255, 0.95)';
                 header.style.boxShadow = 'var(--shadow)';
             }
+        });
+
+        // Inicializar cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeUserData();
         });
     </script>
 </body>
