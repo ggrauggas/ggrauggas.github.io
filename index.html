@@ -307,6 +307,9 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .project-card:hover {
@@ -326,6 +329,7 @@
 
         .project-content {
             padding: 1.5rem;
+            flex-grow: 1;
         }
 
         .project-content h3 {
@@ -343,6 +347,8 @@
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-bottom: 1.5rem;
+            min-height: 60px;
+            align-content: flex-start;
         }
 
         .tech-tag {
@@ -356,6 +362,8 @@
         .project-links {
             display: flex;
             gap: 1rem;
+            margin-top: auto;
+            padding-top: 1rem;
         }
 
         .project-link {
