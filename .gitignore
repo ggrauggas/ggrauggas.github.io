@@ -1,0 +1,14 @@
+# Claude Code & skills
+.claude/
+.agents/
+.trae/
+CLAUDE.md
+skills-lock.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

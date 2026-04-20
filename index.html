@@ -3,1075 +3,358 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerard Grau - Desarrollador Full Stack</title>
+    <title>Gerard Grau — Desarrollador Full Stack</title>
+    <meta name="description" content="Desarrollador Full Stack especializado en Flutter, IA y web. Valencia, España.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #7c3aed;
-            --accent: #06b6d4;
-            --dark: #1e293b;
-            --darker: #0f172a;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --gray-light: #cbd5e1;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
-            --gradient-accent: linear-gradient(135deg, var(--accent), var(--primary));
-            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            --border-radius: 12px;
-            --transition: all 0.3s ease;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header & Navigation */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 0;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--dark);
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 180px 0 100px;
-            background: var(--darker);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.05"><polygon fill="white" points="0,1000 1000,0 1000,1000"/></svg>');
-            background-size: cover;
-        }
-
-        .hero-content {
-            max-width: 700px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            color: var(--gray-light);
-        }
-
-        .highlight {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 700;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: var(--gradient);
-            color: white;
-            box-shadow: var(--shadow);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: white;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        /* About Section */
-        .section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
-        }
-
-        .section-title p {
-            color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-            color: var(--gray);
-        }
-
-        .user-name {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 600;
-        }
-
-        .user-location {
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-
-        .skill-category h4 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .skill-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .skill-item {
-            background: white;
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--gray-light);
-            transition: var(--transition);
-        }
-
-        .skill-item:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
-            align-items: stretch; /* Fuerza a que todas las tarjetas midan lo mismo de alto */
-        }
-
-        .project-card {
-            background: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column; /* Organiza el contenido (imagen, texto, links) en vertical */
-            height: 100%;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .project-image {
-            height: 200px;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1; 
-        }
-
-        .project-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-content p {
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: auto; 
-            margin-bottom: 1.5rem;
-            min-height: 40px;
-            align-items: center;
-            align-content: center;
-        }
-        .tech-tag {
-            background: var(--gray-light);
-            padding: 4px 10px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid #f1f5f9;
-        }
-
-        .project-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .project-link:hover {
-            color: var(--primary-dark);
-        }
-
-        .project-description {
-            color: var(--gray);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            min-height: 60px; /* Asegura un espacio base para el texto */
-        }
-
-        /* Stats Section */
-        .stats {
-            background: var(--darker);
-            color: white;
-            padding: 80px 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--gray-light);
-            font-size: 1.1rem;
-        }
-
-        /* Contact Section */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.25rem;
-        }
-
-        .contact-text h4 {
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-text p {
-            color: var(--gray);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--gray-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dark);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            background: var(--gradient);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .contact-form {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid var(--gray-light);
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--darker);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .footer-text {
-            color: var(--gray-light);
-            margin-bottom: 2rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-links a {
-            color: var(--gray-light);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .copyright {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .about-content, .contact-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.75rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: var(--shadow);
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 2.25rem;
-            }
-            
-            .btn-group {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero {
-                padding: 150px 0 80px;
-            }
-            
-            .section {
-                padding: 80px 0;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
+
+    <!-- ===== HEADER ===== -->
+    <header id="header">
         <div class="container">
             <nav>
-                <div class="logo" id="userName">Gerard Grau</div>
-                <div class="nav-links">
-                    <a href="#about">Sobre Mí</a>
-                    <a href="#skills">Habilidades</a>
-                    <a href="#projects">Proyectos</a>
-                    <a href="#contact">Contacto</a>
-                </div>
-                <button class="menu-toggle">
-                    <i class="fas fa-bars"></i>
+                <a href="#" class="logo">GG</a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#about">Sobre mí</a></li>
+                    <li><a href="#projects">Proyectos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span>
+                    <span></span>
                 </button>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- ===== HERO ===== -->
     <section class="hero">
+        <div class="hero-grid" aria-hidden="true"></div>
         <div class="container">
-            <div class="hero-content">
-                <h1>Desarrollador <span class="highlight">Full Stack</span><br>Especializado en IA</h1>
-                <p>Transformando ideas en soluciones digitales innovadoras. Más de 2 años de experiencia creando aplicaciones multiplataforma y web que marcan la diferencia.</p>
-                <div class="btn-group">
-                    <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
-                    <a href="#contact" class="btn btn-outline">Contactar</a>
+            <div class="hero-layout">
+
+                <!-- Left: text -->
+                <div class="hero-text reveal">
+                    <span class="eyebrow">Multiplataforma · IA · Web</span>
+                    <h1>Gerard<br>Grau<span class="dot">.</span></h1>
+                    <p class="hero-sub">Construyo productos digitales desde la idea hasta el deploy — con atención al detalle en cada capa.</p>
+                    <div class="btn-group">
+                        <a href="#projects" class="btn btn-primary">Ver proyectos</a>
+                        <a href="#contact" class="btn btn-ghost">Contactar</a>
+                    </div>
                 </div>
+
+                <!-- Right: code window + badge -->
+                <div class="hero-aside">
+                    <div class="code-window reveal reveal-delay">
+                        <div class="code-header">
+                            <div class="code-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <span class="code-filename">profile.dart</span>
+                        </div>
+                        <div class="code-body">
+<pre><code><span class="kw">class</span> <span class="cls">GerardGrau</span> {
+  <span class="kw">final</span> <span class="ty">String</span> role
+    <span class="op">=</span> <span class="str">'Full Stack Dev'</span>;
+  <span class="kw">final</span> <span class="ty">String</span> city
+    <span class="op">=</span> <span class="str">'Valencia, ES'</span>;
+
+  <span class="ty">List</span><span class="op">&lt;</span><span class="ty">String</span><span class="op">&gt;</span> stack <span class="op">=</span> [
+    <span class="str">'Flutter'</span>, <span class="str">'Python'</span>,
+    <span class="str">'Vue'</span>, <span class="str">'Node.js'</span>,
+  ];
+
+  <span class="ty">bool</span> <span class="fn">available</span>() <span class="op">=&gt;</span> <span class="kw">true</span>;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="hero-badge reveal reveal-delay2">
+                        <span class="badge-num">15+</span>
+                        <span class="badge-label">proyectos<br>completados</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ===== ABOUT ===== -->
     <section id="about" class="section">
         <div class="container">
-            <div class="section-title">
-                <h2>Sobre Mí</h2>
-                <p>Apasionado por la tecnología y el desarrollo de soluciones innovadoras</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Hola, soy <span class="user-name">Gerard Grau</span></h3>
-                    <p>Soy un desarrollador full stack, residente en <span class="user-location">Valencia, España</span>, especializado en el desarrollo de aplicaciones tanto móviles como web,
-                    además de soluciones de inteligencia artificial con Python.</p>
-                    <p>Estoy enfocado en enfrentar nuevos desafíos y crear productos que no solo sean funcionales, sino que también ofrezcan una experiencia de usuario excepcional.</p>
-                    <p>Me gusta explorar nuevas tecnologías, contribuir a proyectos de código abierto y compartir conocimiento con la comunidad de desarrolladores.</p>
-                </div>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Desarrollo Móvil</h4>
-                        <div class="skill-items">
-                            <span class="skill-item">Flutter</span>
-                            <span class="skill-item">Dart</span>
-                            <span class="skill-item">Firebase</span>
-                            <span class="skill-item">Provider</span>
-                            <span class="skill-item">Bloc</span>
+            <div class="split-layout">
+
+                <div class="reveal">
+                    <span class="section-eyebrow">Sobre mí</span>
+                    <h2>Construyo con <span class="accent">propósito</span>.</h2>
+                    <p>Soy desarrollador full stack con base en <strong>Valencia, España</strong>. Me especializo en aplicaciones móviles con Flutter, soluciones de IA con Python y desarrollo web moderno.</p>
+                    <p>Enfocado en crear productos que no solo funcionen bien, sino que ofrezcan una experiencia de usuario cuidada en cada detalle.</p>
+                    <div class="inline-stats">
+                        <div>
+                            <strong>2+</strong>
+                            <span>años de experiencia</span>
+                        </div>
+                        <div>
+                            <strong>15+</strong>
+                            <span>proyectos completados</span>
                         </div>
                     </div>
-                    <div class="skill-category">
+                </div>
+
+                <div class="skills-block reveal reveal-delay">
+                    <div class="skill-group">
+                        <h4>Móvil</h4>
+                        <div class="tags">
+                            <span>Flutter</span><span>Dart</span><span>Firebase</span><span>Provider</span><span>Bloc</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
                         <h4>Inteligencia Artificial</h4>
-                        <div class="skill-items">
-                            <span class="skill-item">Python</span>
-                            <span class="skill-item">TensorFlow</span>
-                            <span class="skill-item">OpenCV</span>
-                            <span class="skill-item">Pandas</span>
-                            <span class="skill-item">NumPy</span>
+                        <div class="tags">
+                            <span>Python</span><span>TensorFlow</span><span>OpenCV</span><span>Pandas</span><span>NumPy</span>
                         </div>
                     </div>
-                    <div class="skill-category">
-                        <h4>Desarrollo Web</h4>
-                        <div class="skill-items">
-                            <span class="skill-item">Vue</span>
-                            <span class="skill-item">JavaScript</span>
-                            <span class="skill-item">Node.js</span>
-                            <span class="skill-item">Express</span>
-                            <span class="skill-item">MongoDB</span>
-                            <span class="skill-item">MySQL</span>
-                            <span class="skill-item">Business Central</span>
+                    <div class="skill-group">
+                        <h4>Web</h4>
+                        <div class="tags">
+                            <span>Vue</span><span>JavaScript</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>MySQL</span>
                         </div>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-group">
                         <h4>Herramientas</h4>
-                        <div class="skill-items">
-                            <span class="skill-item">Git</span>
-                            <span class="skill-item">Docker</span>
-                            <span class="skill-item">Postman</span>
-                            <span class="skill-item">Figma</span>
+                        <div class="tags">
+                            <span>Git</span><span>Docker</span><span>Postman</span><span>Figma</span>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section section-alt">
         <div class="container">
-            <div class="section-title">
-                <h2>Proyectos Destacados</h2>
-                <p>Algunos de mis trabajos más recientes y desafiantes</p>
+
+            <div class="section-head reveal">
+                <span class="section-eyebrow">Proyectos</span>
+                <h2>Trabajo reciente.</h2>
             </div>
-            <div class="projects-grid">
-             <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <div class="project-content">
+
+            <!-- Featured project: full-width asymmetric -->
+            <article class="project-featured reveal">
+                <div>
+                    <header class="project-meta">
+                        <span class="project-index">01</span>
+                        <div class="project-tech-tags">
+                            <span>Vue</span><span>Node.js</span><span>JavaScript</span><span>SCSS</span>
+                        </div>
+                    </header>
                     <h3>TU diabetes NUESTRA historia</h3>
-                    <p>
-                        Plataforma web tipo foro para ayudar a personas con diabetes tipo 1, 
-                        donde los usuarios pueden compartir experiencias, hacer preguntas 
-                        y recibir ayuda de otros usuarios.
-                    </p>
-            
-                    <div class="project-tech">
-                        <span class="tech-tag">Vue</span>
-                        <span class="tech-tag">NodeJS</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">SCSS</span>
-                    </div>
-            
-                    <div class="project-links">
-                        <a href="https://github.com/ggrauggas/PROYECTO-TDNH" 
-                           class="project-link" 
-                           target="_blank" 
-                           rel="noopener noreferrer">
-                            <i class="fab fa-github"></i>
-                            <span>Código</span>
+                    <p>Plataforma web tipo foro para personas con diabetes tipo 1 — los usuarios comparten experiencias, hacen preguntas y reciben apoyo de la comunidad.</p>
+                    <div class="project-actions">
+                        <a href="https://github.com/ggrauggas/PROYECTO-TDNH" class="action-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> Código
                         </a>
-            
-                        <a href="https://tudiabetes.netlify.app" 
-                           class="project-link" 
-                           target="_blank" 
-                           rel="noopener noreferrer">
-                            <i class="fas fa-globe"></i>
-                            <span>Sitio Web</span>
+                        <a href="https://tudiabetes.netlify.app" class="action-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-arrow-up-right-from-square"></i> Ver sitio
                         </a>
                     </div>
                 </div>
-            </div>
-                            
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-barcode"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>MyCodeService</h3>
-                        <p>Aplicación Flutter para escanear, gestionar y organizar códigos de barras con base de datos local y sistema de categorías inteligente, operando actualmente en pequeños comercios.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Dart</span>
-                            <span class="tech-tag">SQLite</span>
-                            <span class="tech-tag">Camera API</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/ggrauggas/MyCodeService" class="project-link">
-                                <i class="fab fa-github"></i>
-                                <span>Código</span>
-                            </a>
-                        </div>
-                    </div>
+                <div class="project-visual" aria-hidden="true">
+                    <i class="fas fa-heart-pulse"></i>
                 </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Sistema de Reservas API</h3>
-                        <p>Backend completo para sistema de reservas con autenticación, gestión de usuarios y administración de recursos.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">JWT</span>
+            </article>
+
+            <!-- Two smaller projects side by side -->
+            <div class="project-grid">
+                <article class="project-card reveal">
+                    <header class="project-meta">
+                        <span class="project-index">02</span>
+                        <div class="project-tech-tags">
+                            <span>Flutter</span><span>Dart</span><span>SQLite</span>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/ggrauggas/backend-reservas_API" class="project-link">
-                                <i class="fab fa-github"></i>
-                                <span>Código</span>
-                            </a>
-                        </div>
+                    </header>
+                    <h3>MyCodeService</h3>
+                    <p>App Flutter para escanear, gestionar y organizar códigos de barras. Operando en pequeños comercios con base de datos local y sistema de categorías.</p>
+                    <div class="project-actions">
+                        <a href="https://github.com/ggrauggas/MyCodeService" class="action-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> Código
+                        </a>
                     </div>
-                </div>
+                </article>
+                <article class="project-card reveal reveal-delay">
+                    <header class="project-meta">
+                        <span class="project-index">03</span>
+                        <div class="project-tech-tags">
+                            <span>Node.js</span><span>MongoDB</span><span>JWT</span>
+                        </div>
+                    </header>
+                    <h3>Sistema de Reservas API</h3>
+                    <p>Backend completo para gestión de reservas con autenticación JWT, gestión de usuarios y administración de recursos mediante REST.</p>
+                    <div class="project-actions">
+                        <a href="https://github.com/ggrauggas/backend-reservas_API" class="action-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> Código
+                        </a>
+                    </div>
+                </article>
             </div>
+
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">2+</div>
-                    <div class="stat-label">Años de Experiencia</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Proyectos Completados</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Tecnologías Dominadas</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Comprometido</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
+    <!-- ===== CONTACT ===== -->
     <section id="contact" class="section">
         <div class="container">
-            <div class="section-title">
-                <h2>Contacto</h2>
-                <p>¿Tienes una idea en mente? ¡Hablemos!</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Email</h4>
-                            <p id="userEmail">gerardgrau2004@gmail.com</p>
-                        </div>
+            <div class="split-layout">
+
+                <div class="reveal">
+                    <span class="section-eyebrow">Contacto</span>
+                    <h2>¿Tienes un proyecto<br>en mente?</h2>
+                    <p>Siempre abierto a colaborar en proyectos interesantes o explorar nuevas oportunidades laborales.</p>
+                    <div class="contact-info">
+                        <a href="mailto:gerardgrau2004@gmail.com" class="contact-email" id="userEmail">gerardgrau2004@gmail.com</a>
+                        <span class="contact-location" id="userLocation">Valencia, España</span>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Ubicación</h4>
-                            <p id="userLocation">Valencia, España</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-share-alt"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Redes Sociales</h4>
-                            <div class="social-links">
-                                <a href="https://github.com/ggrauggas" class="social-link" id="githubLink">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://linkedin.com/in/gerard-grau-33ba94338" class="social-link" id="linkedinLink">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="social-row">
+                        <a href="https://github.com/ggrauggas" class="social-btn" id="githubLink" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/gerard-grau-33ba94338" class="social-btn" id="linkedinLink" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
+
+                <div class="form-card reveal reveal-delay">
+                    <form id="contactForm" novalidate>
+                        <div class="field">
                             <label for="name">Nombre</label>
-                            <input type="text" id="name" class="form-control" required>
+                            <input type="text" id="name" name="name" class="input" required placeholder="Tu nombre">
                         </div>
-                        <div class="form-group">
+                        <div class="field">
                             <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" required>
+                            <input type="email" id="email" name="email" class="input" required placeholder="tu@email.com">
                         </div>
-                        <div class="form-group">
+                        <div class="field">
                             <label for="subject">Asunto</label>
-                            <input type="text" id="subject" class="form-control" required>
+                            <input type="text" id="subject" name="subject" class="input" required placeholder="¿De qué se trata?">
                         </div>
-                        <div class="form-group">
+                        <div class="field">
                             <label for="message">Mensaje</label>
-                            <textarea id="message" class="form-control" required></textarea>
+                            <textarea id="message" name="message" class="input" required placeholder="Cuéntame tu idea..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                        <button type="submit" class="btn btn-primary btn-block">Enviar mensaje</button>
                     </form>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo" id="footerName">Gerard Grau</div>
-                <p class="footer-text">Desarrollador Full Stack especializado en Flutter e Inteligencia Artificial</p>
-                <div class="footer-links">
-                    <a href="#about">Sobre Mí</a>
-                    <a href="#skills">Habilidades</a>
+            <div class="footer-row">
+                <span class="footer-brand" id="footerName">Gerard Grau</span>
+                <nav class="footer-nav" aria-label="Footer">
+                    <a href="#about">Sobre mí</a>
                     <a href="#projects">Proyectos</a>
                     <a href="#contact">Contacto</a>
-                </div>
-                <p class="copyright">&copy; <span id="copyrightYear">2026</span> <span id="copyrightName">Gerard Grau</span>. Todos los derechos reservados.</p>
+                </nav>
+                <p class="footer-copy">&copy; <span id="copyrightYear">2026</span> <span id="copyrightName">Gerard Grau</span></p>
             </div>
         </div>
     </footer>
 
     <script>
-        // CONFIGURACIÓN DEL USUARIO - MODIFICA ESTOS VALORES
+        // ── Config ────────────────────────────────────────────
         const userConfig = {
-            // Información personal
-            name: "Gerard Grau",
-            email: "gerardgrau2004@gmail.com",
-            location: "Valencia, España",
-            
-            // Enlaces a redes sociales
-            socialLinks: {
-                github: "https://github.com/ggrauggas",
-                linkedin: "https://linkedin.com/in/gerard-grau-33ba94338",
-                twitter: "https://twitter.com/ggrauggas"
-            },
-            
-            // Información profesional
-            title: "Desarrollador Full Stack",
-            specialization: "Especializado en Flutter & IA",
-            description: "Transformando ideas en soluciones digitales innovadoras. Más de 2 años de experiencia creando aplicaciones que marcan la diferencia.",
-            
-            // Estadísticas
-            stats: {
-                experience: "2+",
-                projects: "15+",
-                technologies: "5+",
-                commitment: "100%"
-            },
-            
-            // Año de copyright
-            copyrightYear: "2023"
+            name:     'Gerard Grau',
+            email:    'gerardgrau2004@gmail.com',
+            location: 'Valencia, España',
+            github:   'https://github.com/ggrauggas',
+            linkedin: 'https://linkedin.com/in/gerard-grau-33ba94338',
         };
 
-        // Inicialización de la configuración
-        function initializeUserData() {
-            // Información personal
-            document.getElementById('userName').textContent = userConfig.name;
-            document.querySelectorAll('.user-name').forEach(el => {
-                el.textContent = userConfig.name;
-            });
-            document.getElementById('userEmail').textContent = userConfig.email;
-            document.getElementById('userLocation').textContent = userConfig.location;
-            document.querySelectorAll('.user-location').forEach(el => {
-                el.textContent = userConfig.location;
-            });
-            
-            // Redes sociales
-            document.getElementById('githubLink').href = userConfig.socialLinks.github;
-            document.getElementById('linkedinLink').href = userConfig.socialLinks.linkedin;
-            document.getElementById('twitterLink').href = userConfig.socialLinks.twitter;
-            
-            // Footer
-            document.getElementById('footerName').textContent = userConfig.name;
-            document.getElementById('copyrightName').textContent = userConfig.name;
-            document.getElementById('copyrightYear').textContent = userConfig.copyrightYear;
-            
-            // Actualizar año de copyright si es necesario
-            const currentYear = new Date().getFullYear();
-            if (currentYear.toString() !== userConfig.copyrightYear) {
-                document.getElementById('copyrightYear').textContent = currentYear;
-            }
+        // ── Init data ─────────────────────────────────────────
+        function init() {
+            const $ = id => document.getElementById(id);
+            $('userEmail').textContent = userConfig.email;
+            $('userEmail').href = `mailto:${userConfig.email}`;
+            $('userLocation').textContent = userConfig.location;
+            $('githubLink').href = userConfig.github;
+            $('linkedinLink').href = userConfig.linkedin;
+            $('footerName').textContent = userConfig.name;
+            $('copyrightName').textContent = userConfig.name;
+            $('copyrightYear').textContent = new Date().getFullYear();
         }
 
-        // Mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
+        // ── Mobile menu ───────────────────────────────────────
+        const toggle = document.getElementById('menuToggle');
+        const nav    = document.getElementById('navLinks');
+
+        toggle.addEventListener('click', () => {
+            const open = nav.classList.toggle('active');
+            toggle.classList.toggle('active', open);
+            toggle.setAttribute('aria-expanded', open);
+            document.body.style.overflow = open ? 'hidden' : '';
         });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    document.querySelector('.nav-links').classList.remove('active');
+        nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            nav.classList.remove('active');
+            toggle.classList.remove('active');
+            toggle.setAttribute('aria-expanded', false);
+            document.body.style.overflow = '';
+        }));
+
+        // ── Header scroll state ───────────────────────────────
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 60);
+        }, { passive: true });
+
+        // ── Scroll reveal (IntersectionObserver) ──────────────
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    io.unobserve(e.target);
                 }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        // ── Smooth scroll ─────────────────────────────────────
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const id = a.getAttribute('href');
+                if (id === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(id);
+                if (target) window.scrollTo({ top: target.offsetTop - 72, behavior: 'smooth' });
             });
         });
 
-        // Form submission - Redirige a Gmail con los datos prellenados
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // ── Contact form → Gmail compose ──────────────────────
+        document.getElementById('contactForm').addEventListener('submit', e => {
             e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
+            const name    = document.getElementById('name').value;
+            const email   = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
-            
-            // Crear el enlace de Gmail con los datos del formulario
-            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${userConfig.email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-                `Hola Gerard,\n\nMi nombre es ${name} (${email}).\n\n${message}\n\nSaludos,\n${name}`
-            )}`;
-            
-            // Abrir Gmail en una nueva pestaña
-            window.open(gmailUrl, '_blank');
-            
-            // Limpiar el formulario
-            this.reset();
+            const body    = `Hola Gerard,\n\nSoy ${name} (${email}).\n\n${message}\n\nSaludos,\n${name}`;
+            const url     = `https://mail.google.com/mail/?view=cm&fs=1&to=${userConfig.email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.open(url, '_blank');
+            e.target.reset();
         });
 
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = 'var(--shadow)';
-            }
-        });
-
-        // Inicializar cuando el DOM esté listo
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeUserData();
-        });
+        document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 </html>
