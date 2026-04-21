@@ -108,18 +108,21 @@
                 <div class="reveal">
                     <span class="section-eyebrow">Historial</span>
                     <h3>Experiencia Laboral</h3>
-                    <div class="inline-stats" style="display: block; margin-top: 1.5rem;">
-                        <div style="margin-bottom: 1.5rem;">      
-                            <strong style="display: block; font-size: 1rem; color: var(--accent);">1 Año  ---  Alpesa SL</strong>
-                            <span style="font-size: 0.9rem; opacity: 0.8;">Optimización de procesos y digitalización industrial.</span>
+                    <div class="exp-list">
+                        <div class="exp-item">
+                            <span class="exp-company">Alpesa SL</span>
+                            <span class="exp-duration">1 año</span>
+                            <p class="exp-desc">Optimización de procesos y digitalización industrial.</p>
                         </div>
-                        <div style="margin-bottom: 1.5rem;">
-                            <strong style="display: block; font-size: 1rem; color: var(--accent);">2 Años  ---  Pronet SI</strong>
-                            <span style="font-size: 0.9rem; opacity: 0.8;">Desarrollo de soluciones tecnológicas avanzadas.</span>
+                        <div class="exp-item">
+                            <span class="exp-company">Pronet SI</span>
+                            <span class="exp-duration">2 años</span>
+                            <p class="exp-desc">Desarrollo de soluciones tecnológicas avanzadas.</p>
                         </div>
-                        <div style="margin-bottom: 1.5rem;">
-                            <strong style="display: block; font-size: 1rem; color: var(--accent);">1 Año  ---  Capeta System SL</strong>
-                            <span style="font-size: 0.9rem; opacity: 0.8;">Virtualización de sistemas y soporte de equipos.</span>
+                        <div class="exp-item">
+                            <span class="exp-company">Capeta System SL</span>
+                            <span class="exp-duration">1 año</span>
+                            <p class="exp-desc">Virtualización de sistemas y soporte de equipos.</p>
                         </div>
                     </div>
                 </div>
@@ -127,18 +130,22 @@
                 <div class="reveal reveal-delay">
                     <span class="section-eyebrow">Educación</span>
                     <h3>Formación Académica</h3>
-                    <div class="skills-block" style="margin-top: 1.5rem; background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px;">
-                        <div class="skill-group">
-                            <h4 style="color: var(--accent);">Especialización</h4>
-                            <div class="tags"><span>IA y Big Data</span></div>
+                    <div class="edu-list">
+                        <div class="edu-item">
+                            <span class="edu-label">Especialización</span>
+                            <span class="edu-title">IA y Big Data</span>
                         </div>
-                        <div class="skill-group">
-                            <h4 style="color: var(--accent);">Grados Superiores</h4>
-                            <div class="tags"><span>Desarrollo de Aplicaciones: </span><span>Multiplataforma</span><span>Web</span></div>
+                        <div class="edu-item">
+                            <span class="edu-label">Grado Superior</span>
+                            <span class="edu-title">Desarrollo de Aplicaciones Multiplataforma</span>
                         </div>
-                        <div class="skill-group">
-                            <h4 style="color: var(--accent);">Grado Medio</h4>
-                            <div class="tags"><span>Sistemas Microinformáticos y Redes (SMR)</span></div>
+                        <div class="edu-item">
+                            <span class="edu-label">Grado Superior</span>
+                            <span class="edu-title">Desarrollo de Aplicaciones Web</span>
+                        </div>
+                        <div class="edu-item">
+                            <span class="edu-label">Grado Medio</span>
+                            <span class="edu-title">Sistemas Microinformáticos y Redes</span>
                         </div>
                     </div>
                 </div>
@@ -264,13 +271,20 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+        // Header scroll class
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
+
         // Contact Form Logic
         document.getElementById('contactForm').addEventListener('submit', e => {
             e.preventDefault();
-            const name = document.getElementById('name').value;
-            const message = document.getElementById('message').value;
-            const url = `https://mail.google.com/mail/?view=cm&fs=1&to=gerardgrau2004@gmail.com&su=Contacto Web&body=Hola Gerard, soy ${name}. %0D%0A%0D%0A${message}`;
-            window.open(url, '_blank');
+            const name    = document.getElementById('name').value.trim();
+            const email   = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const subject = encodeURIComponent('Contacto desde tu portfolio web');
+            const body    = encodeURIComponent(`Hola Gerard, soy ${name}${email ? ` (${email})` : ''}.\n\n${message}`);
+            window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=gerardgrau2004@gmail.com&su=${subject}&body=${body}`, '_blank');
         });
     </script>
 </body>

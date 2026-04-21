@@ -159,6 +159,7 @@ nav {
 #header.scrolled .menu-toggle span { background: white; }
 
 .menu-toggle.active span:first-child  { transform: translateY(6.5px) rotate(45deg); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
 .menu-toggle.active span:last-child   { transform: translateY(-6.5px) rotate(-45deg); }
 
 /* ============================================================
@@ -535,6 +536,90 @@ nav {
 .tags span:hover {
     border-color: var(--accent);
     color: var(--accent);
+}
+
+/* ============================================================
+   EXPERIENCE & EDUCATION
+   ============================================================ */
+.exp-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.75rem;
+}
+
+.exp-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.2rem 1rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.exp-item:first-child { padding-top: 0; }
+.exp-item:last-child  { border-bottom: none; padding-bottom: 0; }
+
+.exp-company {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--heading);
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.exp-duration {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    grid-column: 2;
+    grid-row: 1;
+    white-space: nowrap;
+    align-self: center;
+}
+
+.exp-desc {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.55;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin: 0;
+}
+
+.edu-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.75rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.02);
+}
+
+.edu-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    transition: background var(--t);
+}
+
+.edu-item:last-child { border-bottom: none; }
+.edu-item:hover { background: rgba(255,255,255,0.03); }
+
+.edu-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.edu-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--heading);
+    line-height: 1.4;
 }
 
 /* ============================================================
