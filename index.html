@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerard Grau — Desarrollador Full Stack</title>
+    <title>Gerard Grau — Desarrollador Full Stack & IA</title>
     <meta name="description" content="Desarrollador Full Stack especializado en Flutter, IA y web. Valencia, España.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,31 +13,28 @@
 </head>
 <body>
 
-    <!-- ===== HEADER ===== -->
     <header id="header">
         <div class="container">
             <nav>
                 <a href="#" class="logo">GG</a>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#about">Sobre mí</a></li>
+                    <li><a href="#experience">Trayectoria</a></li>
                     <li><a href="#projects">Proyectos</a></li>
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
                 <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </button>
             </nav>
         </div>
     </header>
 
-    <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="hero-grid" aria-hidden="true"></div>
         <div class="container">
             <div class="hero-layout">
 
-                <!-- Left: text -->
                 <div class="hero-text reveal">
                     <span class="eyebrow">Multiplataforma · IA · Web</span>
                     <h1>Gerard<br>Grau<span class="dot">.</span></h1>
@@ -48,86 +45,97 @@
                     </div>
                 </div>
 
-                <!-- Right: code window + badge -->
                 <div class="hero-aside">
                     <div class="code-window reveal reveal-delay">
                         <div class="code-header">
-                            <div class="code-dots">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <span class="code-filename">profile.dart</span>
+                            <div class="code-dots"><span></span><span></span><span></span></div>
+                            <span class="code-filename">profile.py</span>
                         </div>
                         <div class="code-body">
-<pre><code><span class="kw">class</span> <span class="cls">GerardGrau</span> {
-  <span class="kw">final</span> <span class="ty">String</span> role
-    <span class="op">=</span> <span class="str">'Full Stack Dev'</span>;
-  <span class="kw">final</span> <span class="ty">String</span> city
-    <span class="op">=</span> <span class="str">'Valencia, ES'</span>;
+<pre><code><span class="kw">class</span> <span class="cls">GerardGrau</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(<span class="kw">self</span>):
+        <span class="kw">self</span>.role = <span class="str">'Full Stack Dev'</span>
+        <span class="kw">self</span>.city = <span class="str">'Valencia, ES'</span>
 
-  <span class="ty">List</span><span class="op">&lt;</span><span class="ty">String</span><span class="op">&gt;</span> stack <span class="op">=</span> [
-    <span class="str">'Flutter'</span>, <span class="str">'Python'</span>,
-    <span class="str">'Vue'</span>, <span class="str">'Node.js'</span>,
-  ];
+    <span class="kw">def</span> <span class="fn">get_stack</span>(<span class="kw">self</span>):
+        <span class="kw">return</span> [<span class="str">'Flutter'</span>, <span class="str">'Python'</span>, <span class="str">'Vue'</span>]
 
-  <span class="ty">bool</span> <span class="fn">available</span>() <span class="op">=&gt;</span> <span class="kw">true</span>;
-}</code></pre>
+    <span class="kw">def</span> <span class="fn">is_available</span>(<span class="kw">self</span>):
+        <span class="kw">return</span> <span class="kw">True</span></code></pre>
                         </div>
                     </div>
-                    <div class="hero-badge reveal reveal-delay2">
-                        <span class="badge-num">15+</span>
-                        <span class="badge-label">proyectos<br>completados</span>
                     </div>
-                </div>
 
             </div>
         </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
     <section id="about" class="section">
         <div class="container">
             <div class="split-layout">
-
                 <div class="reveal">
                     <span class="section-eyebrow">Sobre mí</span>
                     <h2>Desarrollo con <span class="accent">propósito</span>.</h2>
                     <p>Soy desarrollador full stack con base en <strong>Valencia, España</strong>. Me especializo en aplicaciones móviles con Flutter, soluciones de IA con Python y desarrollo web moderno.</p>
                     <p>Enfocado en crear productos que no solo funcionen bien, sino que ofrezcan una experiencia de usuario cuidada en cada detalle.</p>
-                    <div class="inline-stats">
-                        <div>
-                            <strong>2+</strong>
-                            <span>años de experiencia</span>
-                        </div>
-                        <div>
-                            <strong>15+</strong>
-                            <span>proyectos completados</span>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="skills-block reveal reveal-delay">
                     <div class="skill-group">
-                        <h4>Móvil</h4>
+                        <h4>Móvil & IA</h4>
                         <div class="tags">
-                            <span>Flutter</span><span>Dart</span><span>Firebase</span><span>Provider</span><span>Bloc</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h4>Inteligencia Artificial</h4>
-                        <div class="tags">
-                            <span>Python</span><span>TensorFlow</span><span>OpenCV</span><span>Pandas</span><span>NumPy</span>
+                            <span>Flutter</span><span>Dart</span><span>Python</span><span>TensorFlow</span><span>PyTorch</span>
                         </div>
                     </div>
                     <div class="skill-group">
                         <h4>Web</h4>
                         <div class="tags">
-                            <span>Vue</span><span>JavaScript</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>MySQL</span>
+                            <span>Vue</span><span>JavaScript</span><span>Node.js</span><span>Express</span><span>MongoDB</span>
                         </div>
                     </div>
-                    <div class="skill-group">
-                        <h4>Herramientas</h4>
-                        <div class="tags">
-                            <span>Git</span><span>Docker</span><span>Postman</span><span>Figma</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section section-alt">
+        <div class="container">
+            <div class="split-layout">
+                
+                <div class="reveal">
+                    <span class="section-eyebrow">Historial</span>
+                    <h3>Experiencia Laboral</h3>
+                    <div class="inline-stats" style="display: block; margin-top: 1.5rem;">
+                        <div style="margin-bottom: 1.5rem;">
+                            <strong style="display: block; font-size: 1rem; color: var(--accent);">2 Años — PronetSI</strong>
+                            <span style="font-size: 0.9rem; opacity: 0.8;">Desarrollo de soluciones tecnológicas avanzadas.</span>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <strong style="display: block; font-size: 1rem; color: var(--accent);">1 Año — ALPESA SL</strong>
+                            <span style="font-size: 0.9rem; opacity: 0.8;">Optimización de procesos y digitalización industrial.</span>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <strong style="display: block; font-size: 1rem; color: var(--accent);">1 Año — Capeta System SL</strong>
+                            <span style="font-size: 0.9rem; opacity: 0.8;">Sistemas y desarrollo de aplicaciones a medida.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-delay">
+                    <span class="section-eyebrow">Educación</span>
+                    <h3>Formación Académica</h3>
+                    <div class="skills-block" style="margin-top: 1.5rem; background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px;">
+                        <div class="skill-group">
+                            <h4 style="color: var(--accent);">Especialización</h4>
+                            <div class="tags"><span>IA y Big Data</span></div>
+                        </div>
+                        <div class="skill-group">
+                            <h4 style="color: var(--accent);">Grados Superiores</h4>
+                            <div class="tags"><span>DAM</span><span>DAW</span></div>
+                        </div>
+                        <div class="skill-group">
+                            <h4 style="color: var(--accent);">Grado Medio</h4>
+                            <div class="tags"><span>Sistemas Microinformáticos y Redes (SMR)</span></div>
                         </div>
                     </div>
                 </div>
@@ -136,189 +144,113 @@
         </div>
     </section>
 
-    <!-- ===== PROJECTS ===== -->
-    <section id="projects" class="section section-alt">
+    <section id="projects" class="section">
         <div class="container">
-
             <div class="section-head reveal">
                 <span class="section-eyebrow">Proyectos</span>
                 <h2>Trabajo reciente.</h2>
             </div>
 
-            <!-- Featured project: full-width asymmetric -->
             <article class="project-featured reveal">
                 <div>
                     <header class="project-meta">
                         <span class="project-index">01</span>
-                        <div class="project-tech-tags">
-                            <span>Vue</span><span>Node.js</span><span>JavaScript</span><span>SCSS</span>
-                        </div>
+                        <div class="project-tech-tags"><span>Vue</span><span>Node.js</span><span>SCSS</span></div>
                     </header>
                     <h3>TU diabetes NUESTRA historia</h3>
-                    <p>Plataforma web tipo foro para personas con diabetes tipo 1 — los usuarios comparten experiencias, hacen preguntas y reciben apoyo de la comunidad.</p>
+                    <p>Plataforma web tipo foro para personas con diabetes tipo 1 — comunidad y soporte.</p>
                     <div class="project-actions">
-                        <a href="https://github.com/ggrauggas/PROYECTO-TDNH" class="action-link" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-github"></i> Código
-                        </a>
-                        <a href="https://tudiabetes.netlify.app" class="action-link" target="_blank" rel="noopener noreferrer">
-                            <i class="fas fa-arrow-up-right-from-square"></i> Ver sitio
-                        </a>
+                        <a href="https://github.com/ggrauggas/PROYECTO-TDNH" class="action-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> Código</a>
+                        <a href="https://tudiabetes.netlify.app" class="action-link" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Ver sitio</a>
                     </div>
                 </div>
-                <div class="project-visual" aria-hidden="true">
-                    <i class="fas fa-heart-pulse"></i>
-                </div>
+                <div class="project-visual" aria-hidden="true"><i class="fas fa-heart-pulse"></i></div>
             </article>
 
-            <!-- Two smaller projects side by side -->
             <div class="project-grid">
                 <article class="project-card reveal">
                     <header class="project-meta">
                         <span class="project-index">02</span>
-                        <div class="project-tech-tags">
-                            <span>Flutter</span><span>Dart</span><span>SQLite</span>
-                        </div>
+                        <div class="project-tech-tags"><span>Flutter</span><span>SQLite</span></div>
                     </header>
                     <h3>MyCodeService</h3>
-                    <p>App Flutter para escanear, gestionar y organizar códigos de barras. Operando en pequeños comercios con base de datos local y sistema de categorías.</p>
-                    <div class="project-actions">
-                        <a href="https://github.com/ggrauggas/MyCodeService" class="action-link" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-github"></i> Código
-                        </a>
-                    </div>
+                    <p>App Flutter para escanear y organizar códigos de barras en comercios.</p>
+                    <a href="https://github.com/ggrauggas/MyCodeService" class="action-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> Código</a>
                 </article>
                 <article class="project-card reveal reveal-delay">
                     <header class="project-meta">
                         <span class="project-index">03</span>
-                        <div class="project-tech-tags">
-                            <span>Node.js</span><span>MongoDB</span><span>JWT</span>
-                        </div>
+                        <div class="project-tech-tags"><span>Node.js</span><span>JWT</span></div>
                     </header>
                     <h3>Sistema de Reservas API</h3>
-                    <p>Backend completo para gestión de reservas con autenticación JWT, gestión de usuarios y administración de recursos mediante REST.</p>
-                    <div class="project-actions">
-                        <a href="https://github.com/ggrauggas/backend-reservas_API" class="action-link" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-github"></i> Código
-                        </a>
-                    </div>
+                    <p>Backend completo con gestión de usuarios y administración de recursos.</p>
+                    <a href="https://github.com/ggrauggas/backend-reservas_API" class="action-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> Código</a>
                 </article>
             </div>
-
         </div>
     </section>
 
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" class="section">
+    <section id="contact" class="section section-alt">
         <div class="container">
             <div class="split-layout">
-
                 <div class="reveal">
                     <span class="section-eyebrow">Contacto</span>
-                    <h2>¿Tienes un proyecto<br>en mente?</h2>
-                    <p>Siempre abierto a colaborar en proyectos interesantes o explorar nuevas oportunidades laborales.</p>
+                    <h2>¿Tienes un proyecto en mente?</h2>
+                    <p>Siempre abierto a colaborar en proyectos interesantes o explorar nuevas oportunidades.</p>
                     <div class="contact-info">
-                        <a href="mailto:gerardgrau2004@gmail.com" class="contact-email" id="userEmail">gerardgrau2004@gmail.com</a>
-                        <span class="contact-location" id="userLocation">Valencia, España</span>
-                    </div>
-                    <div class="social-row">
-                        <a href="https://github.com/ggrauggas" class="social-btn" id="githubLink" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/gerard-grau-33ba94338" class="social-btn" id="linkedinLink" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
+                        <a href="mailto:gerardgrau2004@gmail.com" class="contact-email">gerardgrau2004@gmail.com</a>
+                        <span class="contact-location">Valencia, España</span>
                     </div>
                 </div>
 
                 <div class="form-card reveal reveal-delay">
-                    <form id="contactForm" novalidate>
+                    <form id="contactForm">
                         <div class="field">
                             <label for="name">Nombre</label>
-                            <input type="text" id="name" name="name" class="input" required placeholder="Tu nombre">
+                            <input type="text" id="name" required class="input" placeholder="Tu nombre">
                         </div>
                         <div class="field">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" class="input" required placeholder="tu@email.com">
-                        </div>
-                        <div class="field">
-                            <label for="subject">Asunto</label>
-                            <input type="text" id="subject" name="subject" class="input" required placeholder="¿De qué se trata?">
+                            <input type="email" id="email" required class="input" placeholder="tu@email.com">
                         </div>
                         <div class="field">
                             <label for="message">Mensaje</label>
-                            <textarea id="message" name="message" class="input" required placeholder="Cuéntame tu idea..."></textarea>
+                            <textarea id="message" required class="input" placeholder="Cuéntame tu idea..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Enviar mensaje</button>
                     </form>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">
             <div class="footer-row">
-                <span class="footer-brand" id="footerName">Gerard Grau</span>
-                <nav class="footer-nav" aria-label="Footer">
+                <span class="footer-brand">Gerard Grau</span>
+                <nav class="footer-nav">
                     <a href="#about">Sobre mí</a>
-                    <a href="#projects">Proyectos</a>
+                    <a href="#experience">Trayectoria</a>
                     <a href="#contact">Contacto</a>
                 </nav>
-                <p class="footer-copy">&copy; <span id="copyrightYear">2026</span> <span id="copyrightName">Gerard Grau</span></p>
+                <p class="footer-copy">&copy; <span id="copyrightYear">2026</span> Gerard Grau</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // ── Config ────────────────────────────────────────────
-        const userConfig = {
-            name:     'Gerard Grau',
-            email:    'gerardgrau2004@gmail.com',
-            location: 'Valencia, España',
-            github:   'https://github.com/ggrauggas',
-            linkedin: 'https://linkedin.com/in/gerard-grau-33ba94338',
-        };
+        // Init Copyright Year
+        document.getElementById('copyrightYear').textContent = new Date().getFullYear();
 
-        // ── Init data ─────────────────────────────────────────
-        function init() {
-            const $ = id => document.getElementById(id);
-            $('userEmail').textContent = userConfig.email;
-            $('userEmail').href = `mailto:${userConfig.email}`;
-            $('userLocation').textContent = userConfig.location;
-            $('githubLink').href = userConfig.github;
-            $('linkedinLink').href = userConfig.linkedin;
-            $('footerName').textContent = userConfig.name;
-            $('copyrightName').textContent = userConfig.name;
-            $('copyrightYear').textContent = new Date().getFullYear();
-        }
-
-        // ── Mobile menu ───────────────────────────────────────
+        // Mobile menu toggle
         const toggle = document.getElementById('menuToggle');
-        const nav    = document.getElementById('navLinks');
-
+        const nav = document.getElementById('navLinks');
         toggle.addEventListener('click', () => {
             const open = nav.classList.toggle('active');
             toggle.classList.toggle('active', open);
-            toggle.setAttribute('aria-expanded', open);
-            document.body.style.overflow = open ? 'hidden' : '';
         });
 
-        nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-            nav.classList.remove('active');
-            toggle.classList.remove('active');
-            toggle.setAttribute('aria-expanded', false);
-            document.body.style.overflow = '';
-        }));
-
-        // ── Header scroll state ───────────────────────────────
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 60);
-        }, { passive: true });
-
-        // ── Scroll reveal (IntersectionObserver) ──────────────
+        // Intersection Observer for Reveal
         const io = new IntersectionObserver(entries => {
             entries.forEach(e => {
                 if (e.isIntersecting) {
@@ -326,35 +258,17 @@
                     io.unobserve(e.target);
                 }
             });
-        }, { threshold: 0.12 });
-
+        }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-        // ── Smooth scroll ─────────────────────────────────────
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => {
-                const id = a.getAttribute('href');
-                if (id === '#') return;
-                e.preventDefault();
-                const target = document.querySelector(id);
-                if (target) window.scrollTo({ top: target.offsetTop - 72, behavior: 'smooth' });
-            });
-        });
-
-        // ── Contact form → Gmail compose ──────────────────────
+        // Contact Form Logic
         document.getElementById('contactForm').addEventListener('submit', e => {
             e.preventDefault();
-            const name    = document.getElementById('name').value;
-            const email   = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
+            const name = document.getElementById('name').value;
             const message = document.getElementById('message').value;
-            const body    = `Hola Gerard,\n\nSoy ${name} (${email}).\n\n${message}\n\nSaludos,\n${name}`;
-            const url     = `https://mail.google.com/mail/?view=cm&fs=1&to=${userConfig.email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const url = `https://mail.google.com/mail/?view=cm&fs=1&to=gerardgrau2004@gmail.com&su=Contacto Web&body=Hola Gerard, soy ${name}. %0D%0A%0D%0A${message}`;
             window.open(url, '_blank');
-            e.target.reset();
         });
-
-        document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 </html>
