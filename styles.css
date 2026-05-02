@@ -875,55 +875,12 @@ textarea.input {
     max-width: 420px;
 }
 
-.cv-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    box-shadow: var(--shadow);
+.cv-simple {
+    max-width: 560px;
 }
 
-.cv-file-row {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.1rem 1.25rem;
-    background: var(--accent-bg);
-    border: 1px solid var(--accent-dim);
-    border-radius: 10px;
-}
-
-.cv-icon-wrap {
-    width: 44px;
-    height: 44px;
-    border-radius: 8px;
-    background: rgba(13, 148, 136, 0.18);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent);
-    font-size: 1.3rem;
-    flex-shrink: 0;
-}
-
-.cv-name {
-    display: block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: var(--heading);
-}
-
-.cv-desc {
-    display: block;
-    font-size: 0.7rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 0.15rem;
+.cv-simple p {
+    margin-bottom: 2rem;
 }
 
 /* ============================================================
