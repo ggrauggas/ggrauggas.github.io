@@ -8,7 +8,7 @@ const userConfig = {
     // Enlaces a redes sociales
     socialLinks: {
         github: "https://github.com/ggrauggas",
-        linkedin: "https://linkedin.com/in/gerard-grau-33ba94338",
+        linkedin: "https://www.linkedin.com/in/gerard-grau-33ba94338/",
         twitter: "https://twitter.com/ggrauggas"
     },
     

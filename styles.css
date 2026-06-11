@@ -303,6 +303,37 @@ nav {
     justify-content: center;
 }
 
+.btn-divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(255,255,255,0.14);
+}
+
+.hero-social {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.hero-social a {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.45);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color var(--t), background var(--t), transform var(--t);
+}
+
+.hero-social a:hover {
+    color: white;
+    background: rgba(255,255,255,0.08);
+}
+
+.hero-social a:active { transform: scale(0.94); }
+
 /* Right — code window */
 .hero-aside {
     display: flex;
@@ -643,6 +674,15 @@ nav {
     transform: translateY(-3px);
 }
 
+/* Zig-zag: alternate visual side on even projects */
+.project-featured.reverse {
+    grid-template-columns: auto 1fr;
+}
+
+.project-featured.reverse .project-visual {
+    order: -1;
+}
+
 .project-visual {
     width: 156px;
     height: 156px;
@@ -853,34 +893,55 @@ textarea.input {
 }
 
 /* ============================================================
-   CV DOWNLOAD
+   CV DOWNLOAD — banner band
    ============================================================ */
-#cv::before {
+.section-compact { padding: 0 0 120px; }
+
+.cv-banner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem 3.25rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cv-banner::before {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 420px;
-    height: 420px;
-    background: radial-gradient(circle at top right, rgba(13,148,136,0.06) 0%, transparent 70%);
+    top: -40%;
+    right: -8%;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(13,148,136,0.12) 0%, transparent 70%);
     pointer-events: none;
 }
 
-#cv .split-layout h2 { margin-bottom: 1.25rem; }
+.cv-banner h2 {
+    font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--heading);
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+}
 
-#cv .split-layout h2 .dot { color: var(--accent); }
+.cv-banner h2 .dot { color: var(--accent); }
 
-#cv .split-layout > div > p {
+.cv-banner p {
     color: var(--muted);
-    max-width: 420px;
+    max-width: 480px;
+    margin: 0;
 }
 
-.cv-simple {
-    max-width: 560px;
-}
-
-.cv-simple p {
-    margin-bottom: 2rem;
+.cv-banner .btn {
+    position: relative;
+    z-index: 1;
+    padding: 0.85rem 1.75rem;
 }
 
 /* ============================================================
@@ -920,6 +981,30 @@ footer {
 
 .footer-nav a:hover { color: rgba(255,255,255,0.8); }
 
+.footer-social {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.footer-social a {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color var(--t), border-color var(--t);
+}
+
+.footer-social a:hover {
+    color: white;
+    border-color: rgba(255,255,255,0.3);
+}
+
 .footer-copy {
     font-size: 0.78rem;
     color: rgba(255,255,255,0.25);
@@ -946,12 +1031,21 @@ footer {
         gap: 3rem;
     }
 
-    .project-featured {
+    .project-featured,
+    .project-featured.reverse {
         grid-template-columns: 1fr;
         padding: 2rem;
     }
 
     .project-visual { display: none; }
+
+    .cv-banner {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        padding: 2.25rem;
+    }
+
+    .cv-banner .btn { justify-self: start; }
 }
 
 @media (max-width: 768px) {
@@ -1008,4 +1102,10 @@ footer {
     .btn-group { flex-direction: column; align-items: flex-start; }
 
     .btn { width: 100%; justify-content: center; }
+
+    .btn-divider { display: none; }
+
+    .inline-stats { gap: 1.5rem; flex-wrap: wrap; }
+
+    .section-compact { padding: 0 0 80px; }
 }
